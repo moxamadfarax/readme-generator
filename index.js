@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-
 const fs = require("fs");
 
 inquirer
@@ -76,15 +75,18 @@ function readMeGen(data) {
     email,
     tests,
   } = data;
-  return `# ${title}
-https://github.com/${username}/${title}
+  return `# ${title} ![Github license](https://img.shields.io/badge/license-${license}-blue.svg)
 # Description
 ${description}
+
+https://github.com/${username}/${title}
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+
 # Installation
 ${installation}
 # Usage
@@ -93,11 +95,12 @@ ${usage}
 ${contributors}
 # License
 This project uses the ${license} license.
-![Github license](https://img.shields.io/badge/license-${license}-blue.svg)
+For more information about licenses refer to https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
 # Tests
 The steps needed to run the test are as follows: 
 ${tests}
 # Questions
 Contact me at ${email} for any questions. 
+https://github.com/${username}
 `;
 }
