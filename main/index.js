@@ -59,7 +59,7 @@ inquirer
   ])
   .then((response) => {
     console.log(response);
-    fs.writeFile("README.md", readMeGen(response), (err) =>
+    fs.writeFile("generate.md", readMeGen(response), (err) =>
       err ? console.error(err) : console.log("Success!")
     );
   });
@@ -95,12 +95,15 @@ ${usage}
 ${contributors}
 # License
 This project uses the ${license} license.
-For more information about licenses refer to https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
+For more information about licenses refer to this link:
+
+https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
 # Tests
 The steps needed to run the test are as follows: 
 ${tests}
 # Questions
 Contact me at ${email} for any questions. 
+
 https://github.com/${username}
 `;
 }
